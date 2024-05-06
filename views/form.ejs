@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+
+
+  <form action="/insertData" align="center" method="post">
+    <caption><h1>Form</h1></caption>
+    <table align="center" border cellspacing="0" cellpadding="10">
+      <tr>
+        <th>Id</th>
+        <td> <input type="text" name="id"></td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td> <input type="text" name="name"></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td> <input type="email" name="email"></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td> <input type="text" name="password"></td>
+      </tr>
+      <tr>
+        <th>Mobile</th>
+        <td> <input type="text" name="mobile"></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td> <input type="submit"></td>
+      </tr>
+    </table>
+  </form>
+
+  <table align="center" border cellspacing="0" cellpadding="10">
+    <caption><h1>Table</h1></caption>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Mobile no</th>
+            <th>Action</th>
+        </tr>
+
+
+        <% user.map((val)=>{ %>
+          <tr>
+            <td><%= val.id %></td>
+            <td><%= val.name %></td>
+            <td><%= val.email %></td>
+            <td><%= val.password %></td>
+            <td><%= val.mobile %></td>
+            <td>
+              <a href="/deleteData?id=<%=val.id%>" style="background-color: rgb(32, 32, 32); color: white; padding: 5px; text-decoration: none;"> Delete</a>
+              <a href="/editData?id=<%=val.id%>" style="background-color: rgb(32, 32, 32); color: white; padding: 5px;  text-decoration: none;"> Edit</a>
+            </td>
+          </tr>
+       <%}) %>  
+  </table>  
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/editData" align="center" method="post">
+        <caption><h1>Edit Form</h1></caption>
+        <table align="center" border cellspacing="0" cellpadding="10">
+          <tr>
+            <th>Id</th>
+            <td>
+               <input type="text" name="id" value="<%= user.id%>" disabled>
+               <input type="hidden" name="editId" value="<%= user.id%>" >
+            </td>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <td> <input type="text" name="name" value="<%= user.name%>"></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td> <input type="email" name="email" value="<%= user.email%>"></td>
+          </tr>
+          <tr>
+            <th>Password</th>
+            <td> <input type="text" name="password" value="<%= user.password%>"></td>
+          </tr>
+          <tr>
+            <th>Mobile</th>
+            <td> <input type="text" name="mobile" value="<%= user.mobile%>"></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td> <input type="submit" value="update"></td>
+          </tr>
+        </table>
+      </form>
+</body>
+</html>
